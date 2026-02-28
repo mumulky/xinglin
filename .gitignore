@@ -1,0 +1,7 @@
+# 忽略临时文件和系统文件
+*~
+~$*
+*.docx
+*.pdf
+Thumbs.db
+.DS_Store

@@ -457,31 +457,165 @@
         /* 响应式设计 */
         @media (max-width: 768px) {
             .nav-container {
-                flex-direction: column;
-                padding: 10px 0;
+                flex-direction: row;
+                flex-wrap: wrap;
+                padding: 10px 15px;
+            }
+            
+            .logo {
+                font-size: 1.2em;
+            }
+            
+            .logo img {
+                width: 30px;
+                height: 30px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                order: 3;
+                margin-top: 10px;
+            }
+            
+            nav.active {
+                display: block;
             }
             
             nav ul {
-                margin: 15px 0;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                align-items: center;
             }
             
             nav ul li {
-                margin: 0 10px;
+                margin: 8px 0;
+                padding: 5px 0;
+                border-bottom: 1px solid #eee;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #5a3e2b;
+            }
+            
+            .book-btn {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            
+            .hero {
+                padding: 80px 20px;
             }
             
             .hero h1 {
-                font-size: 2em;
+                font-size: 1.8em;
+            }
+            
+            .hero p {
+                font-size: 1em;
             }
             
             .hero-buttons {
                 flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5em;
+            }
+            
+            .section-title p {
+                font-size: 0.9em;
             }
             
             .sections-grid,
             .functions-grid,
             .services-grid {
                 grid-template-columns: 1fr;
+                padding: 0 15px;
             }
+            
+            .section-card,
+            .function-card {
+                padding: 20px 15px;
+            }
+            
+            .section-icon,
+            .function-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2em;
+            }
+            
+            .service-image {
+                height: 180px;
+            }
+            
+            .product-intro,
+            .three-sections,
+            .three-functions,
+            .services-section {
+                padding: 40px 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .theme-detail {
+                padding: 20px 15px;
+            }
+            
+            .theme-detail h2 {
+                font-size: 1.5em;
+            }
+            
+            .theme-detail h3,
+            .theme-detail h4 {
+                font-size: 1.1em;
+            }
+            
+            .theme-detail p,
+            .theme-detail li {
+                font-size: 14px;
+            }
+            
+            .view-all {
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            footer {
+                padding: 30px 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .footer-links h4,
+            .footer-services h4 {
+                margin-bottom: 10px;
+            }
+        }
+        
+        .menu-toggle {
+            display: none;
         }
     </style>
     <script>
@@ -490,6 +624,15 @@
             history.replaceState(null, '', window.location.pathname);
         }
         window.scrollTo(0, 0);
+        
+        // 移动端菜单切换
+        function toggleMenu() {
+            document.getElementById('main-nav').classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            document.getElementById('main-nav').classList.remove('active');
+        }
 
         // DOM加载完成后执行
         document.addEventListener('DOMContentLoaded', function() {
@@ -593,12 +736,13 @@
                 <img src="图片0.png" alt="杏林e站通">
                 杏林e站通
             </div>
-            <nav>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="#home">首页</a></li>
-                    <li><a href="#about">关于我们</a></li>
-                    <li><a href="#themes">三大主题</a></li>
-                    <li><a href="#experience">特色体验</a></li>
+                    <li><a href="#home" onclick="closeMenu()">首页</a></li>
+                    <li><a href="#about" onclick="closeMenu()">关于我们</a></li>
+                    <li><a href="#themes" onclick="closeMenu()">三大主题</a></li>
+                    <li><a href="#experience" onclick="closeMenu()">特色体验</a></li>
                 </ul>
             </nav>
             <button class="book-btn">立即预约</button>
