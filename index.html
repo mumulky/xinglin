@@ -454,37 +454,329 @@
             transform: translateX(5px);
         }
         
-        /* 响应式设计 */
+        /* 移动端APP风格 */
         @media (max-width: 768px) {
+            * {
+                max-width: 100%;
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 0 16px;
+                max-width: 100%;
+            }
+            
+            /* 导航栏 */
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            
             .nav-container {
-                flex-direction: column;
-                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 16px;
+                background: #fff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             }
             
-            nav ul {
-                margin: 15px 0;
+            .logo {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 600;
+                color: #8c6c4a;
             }
             
-            nav ul li {
-                margin: 0 10px;
+            .logo img {
+                width: 28px;
+                height: 28px;
+                margin-right: 8px;
+            }
+            
+            nav, .menu-toggle {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                color: #5a3e2b;
+                padding: 4px 8px;
+            }
+            
+            .book-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+                background: #8c6c4a;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+            }
+            
+            /* 首屏 */
+            .hero {
+                padding: 40px 16px;
+                min-height: auto;
             }
             
             .hero h1 {
-                font-size: 2em;
+                font-size: 24px;
+                line-height: 1.3;
+            }
+            
+            .hero p {
+                font-size: 14px;
+                line-height: 1.6;
             }
             
             .hero-buttons {
                 flex-direction: column;
+                gap: 10px;
             }
             
+            .btn {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+                border-radius: 8px;
+            }
+            
+            /* 标题区块 */
+            .section-title {
+                margin-bottom: 20px;
+                padding;
+: 0            }
+            
+            .section-title h2 {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+            
+            .section-title p {
+                font-size: 13px;
+            }
+            
+            /* 卡片网格 */
             .sections-grid,
             .functions-grid,
             .services-grid {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 0;
+            }
+            
+            /* APP风格卡片 */
+            .section-card,
+            .function-card,
+            .service-card {
+                background: #fff;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+                margin-bottom: 0;
+            }
+            
+            .section-card img,
+            .function-card img {
+                width: 100%;
+                height: 140px;
+                object-fit: cover;
+            }
+            
+            .section-card h3,
+            .function-card h3 {
+                font-size: 16px;
+                padding: 12px 16px 4px;
+                margin: 0;
+            }
+            
+            .section-card p,
+            .function-card p {
+                font-size: 13px;
+                color: #888;
+                padding: 0 16px 12px;
+                margin: 0;
+                line-height: 1.5;
+            }
+            
+            .section-card .btn {
+                margin: 0 16px 12px;
+                width: auto;
+                display: inline-block;
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            
+            /* 服务卡片 */
+            .service-image {
+                height: 140px;
+            }
+            
+            .service-content {
+                padding: 12px 16px;
+            }
+            
+            .service-card h3 {
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+            
+            .service-card p {
+                font-size: 13px;
+                color: #888;
+            }
+            
+            /* 内容区块 */
+            .product-intro,
+            .three-sections,
+            .three-functions,
+            .services-section {
+                padding: 24px 0;
+            }
+            
+            .product-intro > .container > p {
+                padding: 0;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            
+            /* 主题详情 */
+            .theme-detail {
+                padding: 20px 0;
+            }
+            
+            .theme-detail > .container {
+                padding: 0 16px;
+            }
+            
+            .theme-detail h2 {
+                font-size: 20px;
+                margin-bottom: 16px;
+            }
+            
+            .theme-detail h3 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .theme-detail p {
+                font-size: 14px;
+                line-height: 1.7;
+                color: #666;
+            }
+            
+            .theme-detail h4 {
+                font-size: 15px;
+                margin: 16px 0 10px;
+            }
+            
+            /* 图片网格 - 两列 */
+            .theme-detail img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+            }
+            
+            /* 列表项 */
+            .theme-detail li {
+                font-size: 13px;
+                line-height: 1.6;
+                color: #666;
+                margin-bottom: 8px;
+            }
+            
+            /* 餐饮类型卡片 */
+            .theme-detail > .container > div > div > div[style*="grid"] {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+            }
+            
+            .theme-detail > .container > div > div > div[style*="grid"] > div {
+                background: #f5f0e8;
+                padding: 12px;
+                border-radius: 8px;
+            }
+            
+            .theme-detail > .container > div > div > div[style*="grid"] h5,
+            .theme-detail > .container > div > div > div[style*="grid"] p {
+                font-size: 12px;
+                margin: 0;
+            }
+            
+            /* 美食轮播 */
+            #food-carousel {
+                display: flex !important;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 12px;
+                padding: 0 16px;
+            }
+            
+            #food-carousel > div {
+                flex: 0 0 140px;
+                scroll-snap-align: start;
+            }
+            
+            #food-carousel img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+            }
+            
+            /* 客户评价 */
+            .testimonials-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 0;
+            }
+            
+            /* 知识卡片 */
+            .knowledge-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                padding: 0;
+            }
+            
+            /* 底部 */
+            footer {
+                padding: 24px 16px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .view-all {
+                text-align: center;
+                padding: 0;
+                margin-top: 16px;
             }
         }
     </style>
     <script>
+        // 菜单切换
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+        
         // 导航栏滚动效果
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -613,6 +905,7 @@
     <!-- 导航栏 -->
     <header>
         <div class="container nav-container">
+            <button class="menu-toggle" onclick="toggleMenu()" style="display:none;">☰</button>
             <div class="logo">
                 <img src="图片0.png" alt="杏林e站通">
                 杏林e站通
