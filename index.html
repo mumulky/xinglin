@@ -672,8 +672,26 @@
                 font-size: 13px;
             }
             
+            .theme-detail > .container > div:not(:first-child) {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
             .theme-detail img {
-                height: 120px !important;
+                height: 100px !important;
+            }
+            
+            .theme-detail > .container > div:not(:first-child) img {
+                height: 80px !important;
+            }
+            
+            .theme-detail > .container > div:not(:first-child) > div > img {
+                height: 80px !important;
+            }
+            
+            .theme-detail .section-card,
+            .theme-detail .function-card {
+                margin-bottom: 10px;
             }
             
             .view-all {
