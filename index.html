@@ -567,27 +567,52 @@
             .function-card {
                 padding: 0;
                 overflow: hidden;
+                margin-bottom: 20px;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            }
+            
+            .section-card:hover,
+            .function-card:hover {
+                transform: none;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.12);
             }
             
             .section-card .section-image,
             .section-card .function-image,
             .section-card img,
             .function-card img {
-                height: 160px !important;
+                height: 140px !important;
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            .section-card > div:first-child img,
+            .function-card > div:first-child img {
+                height: 140px !important;
             }
             
             .section-card h3,
             .function-card h3 {
-                font-size: 1.2em;
-                margin: 15px 15px 8px;
+                font-size: 1.1em;
+                margin: 12px 15px 6px;
             }
             
             .section-card p,
             .function-card p {
-                font-size: 0.9em;
-                padding: 0 15px 15px;
+                font-size: 0.85em;
+                padding: 0 15px 12px;
                 display: block;
-                -webkit-line-clamp: 3;
+                line-height: 1.5;
+            }
+            
+            .function-card {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .function-card > div:first-child {
+                order: -1;
             }
             
             .section-icon,
