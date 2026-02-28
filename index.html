@@ -482,27 +482,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 12px 16px;
+                padding: 10px 16px;
                 background: #fff;
                 box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            }
-            
-            .logo {
-                display: flex;
-                align-items: center;
-                font-size: 16px;
-                font-weight: 600;
-                color: #8c6c4a;
-            }
-            
-            .logo img {
-                width: 28px;
-                height: 28px;
-                margin-right: 8px;
-            }
-            
-            nav, .menu-toggle {
-                display: none;
             }
             
             .menu-toggle {
@@ -513,9 +495,54 @@
                 cursor: pointer;
                 color: #5a3e2b;
                 padding: 4px 8px;
+                order: 1;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 600;
+                color: #8c6c4a;
+                flex: 1;
+                order: 2;
+            }
+            
+            .logo img {
+                width: 32px;
+                height: 32px;
+                margin-right: 8px;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 10px 0;
+                margin: 0;
+            }
+            
+            nav ul li {
+                padding: 12px 20px;
+                border-bottom: 1px solid #f0f0f0;
             }
             
             .book-btn {
+                order: 3;
                 padding: 8px 16px;
                 font-size: 13px;
                 background: #8c6c4a;
