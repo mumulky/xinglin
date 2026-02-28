@@ -458,6 +458,7 @@
         @media (max-width: 768px) {
             body {
                 padding-bottom: 60px;
+                padding-top: 56px;
             }
             
             /* 顶部导航栏 */
@@ -466,6 +467,18 @@
                 padding: 0 12px;
                 height: 56px;
                 justify-content: space-between;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                z-index: 9999;
+            }
+            
+            body {
+                padding-top: 56px;
+                padding-bottom: 60px;
             }
             
             .menu-toggle {
